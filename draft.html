@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>READY PRINT IT GO!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000AFF;
+        color: white; /* Add this */
+        font-family: "Architype Aubette", sans-serif;
+      }
+
+  video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+  }
+
+  #content {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000AFF;
+    color: #000AFF;
+    font-family: "Architype Aubette", sans-serif;
+  }
+  form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000AFF;
+    background-color: #212f3c;
+    font-family: "Architype Aubette", sans-serif;
+  }
+  label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: white; #000AFF
+    font-family: "Architype Aubette", sans-serif;
+  }
+  select, input[type="file"], input[type="submit"], input[type="text"], input[type="datetime-local"], input[type="number"], input[type="checkbox"] {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #000AFF;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-family: "Architype Aubette", sans-serif;
+  }
+  input[type="file"] {
+    margin-top: 10px;
+  }
+  input[type="submit"]:hover {
+    background-color: #000AFF;
+  }
+  @media (max-width: 768px) {
+    form {
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: "Architype Aubette", sans-serif;
+  }
+  th, td {
+    text-align: center;
+    padding: 8px;
+    border: 2px solid #000AFF;
+    font-family: "Architype Aubette", sans-serif;
+  }
+  thead {
+    background-color: #000AFF;
+    color: white;
+    font-family: "Architype Aubette", sans-serif;
+  }
+  #notes-tab {
+      display: none;
+      background-color: #000AFF;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay loop muted>
+    <source src="yourvideo.mp4" type="video/mp4">
+      <!-- Add other video formats as fallback -->
+    </video>
+    <div id="content">
+    <h1>READY PRINT IT GO!</h1>
+    <form action="UploadPage.aspx" method="post" enctype="multipart/form-data">
+<fieldset>
+<legend>Pricelist</legend>
+<div class="pricelist">
+<table>
+    <tr>
+      <th>Size</th>
+      <th>Black and White</th>
+      <th>Colored</th>
+      <th>Vellum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Short</td>
+      <td>₱1</td>
+      <td>₱3</td>
+      <td>₱20</td>
+    </tr>
+    <tr>
+      <td>Long</td>
+      <td>₱1</td>
+      <td>₱1</td>
+      <td>₱20</td>
+    </tr>
+    <tr>
+      <td>A4</td>
+      <td>₱1</td>
+      <td>₱3</td>
+      <td>₱20</td>
+    </tr>
+    <tr>
+      <td>A3</td>
+      <td>₱2</td>
+      <td>₱4</td>
+      <td>₱40</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+  </p>
+  <p>
+    <fieldset>
+      <legend>File Upload</legend>
+      <p>
+        <label for="delivery-address">Building and Room number</label>
+        <input type="text" name="delivery-address" id="delivery-address" required>
+      </p
+	  <p>
+        <label for="delivery-address">Full Name</label>
+        <input type="text" name="delivery-address" id="delivery-address" required>
+      </p>
+	  <p>
+        <label for="delivery-address">ID Number</label>
+        <input type="text" name="delivery-address" id="delivery-address" required>
+      </p>
+      <p>
+        <label for="delivery-time">Delivery Time:</label>
+        <input type="datetime-local" name="delivery-time" id="delivery-time" required>
+      </p>
+      <p>
+        <label for="payment-method">Payment Method:</label>
+        <select name="payment-method" id="payment-method" required>
+          <option value="">Select Payment Method</option>
+          <option value="COD">Cash on Delivery (COD)</option>
+          <option value="GCASH">Gcash</option>
+          <option value="PAYMAYA">Paymaya</option>
+        </select>
+    <label for="copies">Number of Copies:</label>
+    <input type="number" id="copies" name="copies" min="1" max="100" required>
+  </p>
+  <p>
+    <label for="size">Size:</label>
+    <select id="size" name="size" required>
+      <option value="short">Short</option>
+      <option value="long">Long</option>
+      <option value="a4">A4</option>
+      <option value="a3">A3</option>
+    </select>
+  </p>
+  <p>
+    <label for="colored">Colored</label>
+     <input type="checkbox" id="velum" name="velum" value="true">
+    <label for="blackwhite">Black and White</label>
+    <input type="checkbox" id="velum" name="velum" value="true">
+  </p>
+  <p>
+    <label for="veum">Vellum:</label>
+<input type="checkbox" id="velum" name="velum" value="true">
+  </p>
+  <p>
+    <label for="file">File:</label>
+    <input type="file" id="file" name="file" accept=".doc,.docx,.pdf" required>
+  </p>
+  <p>
+    <label for="file">Proof of Payment:</label>
+    <input type="file" id="file" name="file" accept=".doc,.docx,.pdf" required>
+  </p>
+ <p>
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes"></textarea>
+      </p>
+</fieldset>
+   <p>
+        <button id="submit-button" type="submit" style="background-color: #000AFF; color: #fff; padding: 20px 40px; border: none; border-radius: 4px; font-size: 1.2em; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); font-family: 'Architype Aubette', sans-serif;">Submit</button>
+      </p>
+    </form>
+    <div id="notes-tab">Additional Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+  </div>
+
+  <script>
+    // Handle form submission
+    document.getElementById("print-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      // Perform any additional logic or validation here
+
+      // Show the additional notes
+      var notes = document.getElementById("notes").value;
+      document.getElementById("notes-tab").innerText = "Additional Notes: " + notes;
+      document.getElementById("notes-tab").style.display = "block";
+    });
+  </script>
+</body>
+</html>

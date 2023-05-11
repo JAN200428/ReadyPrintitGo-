@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Receiver</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      color: white;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #33cccc;
+      background-color: #212f3c;
+    }
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px #fff;
+      color: #33cccc;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FILE</h1>
+    <p>Building and Room number: <?php echo $_POST['delivery-address']; ?></p>
+	<p>Full Name: <?php echo $_POST['full-name']; ?></p>
+	<p>ID Number: <?php echo $_POST['id-number']; ?></p>
+    <p>Delivery Time: <?php echo $_POST['delivery-time']; ?></p>
+    <p>Payment Method: <?php echo $_POST['payment-method']; ?></p>
+    <p>Number of Copies: <?php echo $_POST['copies']; ?></p>
+    <p>Size: <?php echo $_POST['size']; ?></p>
+    <p>Colored: <?php echo isset($_POST['colored']) ? 'Yes' : 'No'; ?></p>
+    <p>Black and White: <?php echo isset($_POST['blackwhite']) ? 'Yes' : 'No'; ?></p>
+    <p>Vellum: <?php echo isset($_POST['vellum']) ? 'Yes' : 'No'; ?></p>
+    <p>Uploaded File: <?php echo $_FILES['file']['name']; ?></p>
+    <p>Proof of Payment: <?php echo $_FILES['proof']['name']; ?></p>
+  </div>
+</body>
+</html>
