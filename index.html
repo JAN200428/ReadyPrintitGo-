@@ -404,8 +404,10 @@
                 <select id="size" name="size" required>
                   <option value="short">Short</option>
                   <option value="long">Long</option>
-                  <option value="a4">A4</option>
-                  <option value="a3">A3</option>
+                  <option value="A4">A4</option>
+                  <option value="A3">A3</option>
+		  <option value="Letter">A3</option>  
+		  <option value="Legal">A3</option>
                 </select>
               </p>
               <p>
@@ -439,7 +441,6 @@
           </form>
           <div id="notes-tab">Additional Notes:</div>
         </div>
-
         <script>
           // Handle form submission
           document.getElementById("print-form").addEventListener("submit", function(event) {
